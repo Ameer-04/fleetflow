@@ -9,6 +9,7 @@ import AdminPage from "./pages/AdminPage";
 import VehiclesPage from "./pages/VehiclesPage";
 import DriverPage from "./pages/DriverPage";
 import DeliveryPage from "./pages/DeliveryPage";
+import DispatchPage from "./pages/DispatchPage";
 
 const AppRoutes = () => (
   <Routes>
@@ -30,6 +31,10 @@ const AppRoutes = () => (
 
     <Route element={<ProtectedRoute />}>
       <Route path="/deliveries" element={<DeliveryPage />} />
+    </Route>
+
+    <Route element={<ProtectedRoute />}>
+      <Route path="/dispatches" element={<DispatchPage />} />
     </Route>
     
     <Route element={<AdminRoute />}>
