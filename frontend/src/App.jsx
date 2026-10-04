@@ -6,6 +6,7 @@ import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import DashboardPage from "./pages/DashboardPage";
 import AdminPage from "./pages/AdminPage";
+import VehiclesPage from "./pages/VehiclesPage";
 
 const AppRoutes = () => (
   <Routes>
@@ -17,6 +18,10 @@ const AppRoutes = () => (
       <Route path="/dashboard" element={<DashboardPage />} />
     </Route>
 
+    <Route element={<ProtectedRoute />}>
+      <Route path="/vehicles" element={<VehiclesPage />} />
+    </Route>
+    
     <Route element={<AdminRoute />}>
       <Route path="/admin" element={<AdminPage />} />
     </Route>

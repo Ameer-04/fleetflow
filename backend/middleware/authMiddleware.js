@@ -11,7 +11,7 @@ const protect = async (req, res, next) => {
       throw error;
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || "fleetflow-dev-secret");
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findById(decoded.id).select("-password");
 
     if (!user) {
