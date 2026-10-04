@@ -7,6 +7,9 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const vehicleRoutes = require("./routes/vehicleRoutes");
+const driverRoutes = require("./routes/driverRoutes");
+const userRoutes = require("./routes/userRoutes");
+const deliveryRoutes = require("./routes/deliveryRoutes");
 const errorHandler = require("./middleware/error.middleware");
 
 dotenv.config();
@@ -31,6 +34,9 @@ app.use(morgan("dev"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/vehicles", vehicleRoutes);
+app.use("/api/drivers", driverRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/deliveries", deliveryRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, () => {

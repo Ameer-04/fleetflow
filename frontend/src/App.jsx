@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 import DashboardPage from "./pages/DashboardPage";
 import AdminPage from "./pages/AdminPage";
 import VehiclesPage from "./pages/VehiclesPage";
+import DriverPage from "./pages/DriverPage";
+import DeliveryPage from "./pages/DeliveryPage";
 
 const AppRoutes = () => (
   <Routes>
@@ -20,6 +22,14 @@ const AppRoutes = () => (
 
     <Route element={<ProtectedRoute />}>
       <Route path="/vehicles" element={<VehiclesPage />} />
+    </Route>
+
+    <Route element={<ProtectedRoute />}>
+      <Route path="/drivers" element={<DriverPage />} />
+    </Route>
+
+    <Route element={<ProtectedRoute />}>
+      <Route path="/deliveries" element={<DeliveryPage />} />
     </Route>
     
     <Route element={<AdminRoute />}>
